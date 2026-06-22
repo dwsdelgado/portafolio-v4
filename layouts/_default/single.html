@@ -1,0 +1,65 @@
+{{ define "main" }}
+<main>
+  <article>
+    <div class="post-container">
+      <!-- Main Content -->
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">{{ .Title }}</h1>
+          {{ if .Date }}
+            {{ $tenYearsAgo := now.AddDate -10 0 0 }}
+            {{ if .Date.Before $tenYearsAgo }}
+              <div class="callout callout-warning old-content">
+                <div class="callout-inner">
+                  ⚠️  <b>Aviso</b>
+                  <br />
+                  Este post tiene más de 10 años. No borro publicaciones viejas porque incluso la información antigua puede ser útil, pero ten en cuenta que algunos datos de esta página podrían estar desactualizados o ser incorrectos. ¡Gracias!
+                </div>
+              </div>
+            {{ end }}
+            <div class="meta">{{ dateFormat ":date_medium" .Date }}{{ if .Draft }} <span class="draft-label">BORRADOR</span> {{ end }}</div>
+          {{ else }}
+            <div class="meta">{{ if .Draft }} <span class="draft-label">BORRADOR</span> {{ end }}</div>
+          {{ end }}
+        </div>
+        {{ if isset .Params "tldr" }}
+        <div class="tldr">
+          <strong>Resumen:</strong>
+          {{ .Params.tldr }}
+        </div>{{ end }}
+        <section class="body">
+          {{ .Content }}
+        </section>
+        <!-- Related -->
+        {{ partial "related.html" . }}
+        <div class="post-tags">
+          {{ if ne .Type "page" }}
+          {{ if gt .Params.tags 0 }}
+          <nav class="nav tags">
+            <ul class="tags">
+              {{ range .Params.tags }}
+              <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a></li>
+              {{ end }}
+            </ul>
+          </nav>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+
+      <!-- TOC -->
+      {{ if and (isset .Params "toc") (.Params.toc) }}
+      <div class="toc">
+        <strong>Tabla de contenidos:</strong>
+        {{ .TableOfContents }}
+      </div>
+      {{ end }}
+    </div>
+
+    <!-- Comments -->
+    {{ if ne .Type "page" }}
+    {{ partial "comments.html" . }}
+    {{ end }}
+  </article>
+</main>
+{{ end }}

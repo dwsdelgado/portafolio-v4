@@ -1,0 +1,123 @@
+baseURL = 'https://darwindelgado.com/'
+locale = 'en-us'
+title = 'Darwin Delgado'
+theme = 'archie'
+copyright = 'Darwin Delgado'
+enableRobotsTXT = true
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = false
+    lineNumbersInTable = false
+    noClasses = true
+    style = "github-dark"
+
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.typographer]
+        disable = true
+
+[pagination]
+  pagerSize = 6 # articles per page
+
+[params]
+  mode="auto" # color-mode → light,dark,toggle or auto
+  useCDN=false # don't use CDNs for fonts and icons, instead serve them locally.
+  subtitle = "DevOps, sysadmin, entusiasta tech, homelab."
+  customcss = ["css/custom.css"]
+  commentsGlobalEnable = true # set to 'true' to enable Remark42 comments.
+  [params.author]
+    email = 'darwin@darwindelgado.com'
+    name = 'Darwin Delgado'
+
+[permalinks]
+  blog = "/blog/:year/:slug"
+
+[outputFormats]
+  [outputFormats.RSS]
+    baseName = "blog"
+
+[outputs]
+  home = ['html', 'rss']
+  section = ['html', 'rss']
+  taxonomy = ['html']
+  term = ['html']
+
+[services]
+  [services.rss]
+    limit = 20
+
+[related]
+  includeNewer = true
+  threshold = 80
+  toLower = true
+  [[related.indices]]
+    applyFilter = false
+    cardinalityThreshold = 0
+    name = 'keywords'
+    pattern = ''
+    toLower = true
+    type = 'basic'
+    weight = 100
+  [[related.indices]]
+    applyFilter = false
+    cardinalityThreshold = 0
+    name = 'date'
+    pattern = ''
+    toLower = true
+    type = 'basic'
+    weight = 10
+  [[related.indices]]
+    applyFilter = false
+    cardinalityThreshold = 0
+    name = 'tags'
+    pattern = ''
+    toLower = true
+    type = 'basic'
+    weight = 80
+
+# Social Tags
+[[params.social]]
+  name = "YouTube"
+  icon = "youtube"
+  url = "https://www.youtube.com/@TecWithDarwin"
+
+[[params.social]]
+  name = "GitHub"
+  icon = "github"
+  url = "https://github.com/dwsdelgado"
+
+[[params.social]]
+  name = "Twitter"
+  icon = "twitter"
+  url = "https://x.com/TecWithDarwin"
+
+[[params.social]]
+  name = "Instagram"
+  icon = "instagram"
+  url = "https://www.instagram.com/TecWithDarwin"
+
+# Main menu Items
+[[menu.main]]
+  name = "YouTube"
+  url = "https://www.youtube.com/@TecWithDarwin"
+  weight = 1
+
+[[menu.main]]
+  name = "Blog"
+  url = "/"
+  weight = 3
+
+[[menu.main]]
+  name = "Acerca de"
+  url = "/about/"
+  weight = 4
+
+[[menu.main]]
+  name = "RSS"
+  url = "/blog.xml"
+  weight = 5

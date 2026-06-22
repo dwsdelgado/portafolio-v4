@@ -2,4 +2,4 @@ public/
 .hugo_build.lock
 drupal-export/blog_export*
 drupal-export/exported-comments.xml
-README.md
+DEPLOY.md

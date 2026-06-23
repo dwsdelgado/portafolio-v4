@@ -16,4 +16,4 @@ Codificado en Visual Studio Code. Construido con [Hugo](https://gohugo.io) y el 
 
 
 
-_Cloud, DevOps, sysadmin, entusiasta tech, homelab._
+_Cloud, DevOps, SysAdmin, entusiasta tech, homelab._

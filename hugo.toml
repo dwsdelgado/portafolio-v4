@@ -27,7 +27,7 @@ enableRobotsTXT = true
 [params]
   mode="auto" # color-mode → light,dark,toggle or auto
   useCDN=false # don't use CDNs for fonts and icons, instead serve them locally.
-  subtitle = "DevOps, sysadmin, entusiasta tech, homelab."
+  subtitle = "Cloud, DevOps, SysAdmin, entusiasta tech, homelab."
   customcss = ["css/custom.css"]
   commentsGlobalEnable = true # set to 'true' to enable Remark42 comments.
   [params.author]

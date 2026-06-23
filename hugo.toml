@@ -82,9 +82,9 @@ enableRobotsTXT = true
 
 # Social Tags
 [[params.social]]
-  name = "YouTube"
-  icon = "youtube"
-  url = "https://www.youtube.com/@TecWithDarwin"
+  name = "LinkedIn"
+  icon = "linkedin"
+  url = "https://www.linkedin.com/in/dwsdelgado"
 
 [[params.social]]
   name = "GitHub"
@@ -96,17 +96,7 @@ enableRobotsTXT = true
   icon = "twitter"
   url = "https://x.com/TecWithDarwin"
 
-[[params.social]]
-  name = "Instagram"
-  icon = "instagram"
-  url = "https://www.instagram.com/TecWithDarwin"
-
 # Main menu Items
-[[menu.main]]
-  name = "YouTube"
-  url = "https://www.youtube.com/@TecWithDarwin"
-  weight = 1
-
 [[menu.main]]
   name = "Blog"
   url = "/"
